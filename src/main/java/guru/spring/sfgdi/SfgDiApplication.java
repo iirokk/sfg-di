@@ -1,6 +1,7 @@
 package guru.spring.sfgdi;
 
 import guru.spring.sfgdi.controllers.*;
+import guru.spring.sfgdi.examplebeans.PlaceholderDataSource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -14,11 +15,8 @@ public class SfgDiApplication {
 
 		MyController controller = (MyController) ctx.getBean("myController");
 
-		System.out.println(controller.sayHello());
-
-		System.out.println(ctx.getBean(PropertyInjectedController.class).getGreeting());
-		System.out.println(ctx.getBean(SetterInjectedController.class).getGreeting());
-		System.out.println(ctx.getBean(ConstructorInjectedController.class).getGreeting());
+		PlaceholderDataSource dataSource = (PlaceholderDataSource) ctx.getBean(PlaceholderDataSource.class);
+		System.out.println(dataSource.getUser());
 	}
 
 }
