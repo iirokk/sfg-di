@@ -1,0 +1,18 @@
+guru:
+  mq:
+    username: user2
+    password: 987654
+    url: 123.123.124.2
+
+---
+# file separator
+# de profile specific properties
+spring:
+  config:
+    activate:
+      on-profile: de
+guru:
+  mq:
+    username: user3
+    password: 98234
+    url: 183.324.123.5
