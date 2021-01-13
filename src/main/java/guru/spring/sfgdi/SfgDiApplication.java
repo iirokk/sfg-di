@@ -17,6 +17,7 @@ public class SfgDiApplication {
 
 		PlaceholderDataSource dataSource = (PlaceholderDataSource) ctx.getBean(PlaceholderDataSource.class);
 		System.out.println(dataSource.getUser());
+		System.out.println(dataSource.getLocale());
 	}
 
 }
