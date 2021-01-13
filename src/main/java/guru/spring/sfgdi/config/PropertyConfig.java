@@ -12,10 +12,6 @@ import org.springframework.core.env.Environment;
 @Configuration
 
 public class PropertyConfig {
-
-    @Autowired
-    Environment environment;
-
     @Value("${guru.username}")
     String user;
     @Value("${guru.password}")
@@ -29,6 +25,8 @@ public class PropertyConfig {
     String mqPassword;
     @Value("${guru.mq.url}")
     String mqUrl;
+    @Value("${LANG}")  // Reading ENV variable
+    String localeString;
 
     @Bean
     public PlaceholderDataSource placeholderDataSource() {
@@ -36,7 +34,7 @@ public class PropertyConfig {
         dataSource.setUser(user);
         dataSource.setPassword(password);
         dataSource.setDburl(dburl);
-        dataSource.setLocale(environment.getProperty("LANG"));
+        dataSource.setLocale(localeString);
         return dataSource;
     }
 
